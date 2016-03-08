@@ -69,3 +69,18 @@ let url2 = MaybeURL(url: "www.google.com")
 
 print("url1: \(url1)\n")
 print("url2: \(url2)\n")
+
+protocol Greeter {
+  func greet(person: String) -> String
+}
+
+extension Greeter {
+  func greet(person: String) -> String {
+    return "Well hello there \(person)!"
+  }
+}
+
+struct MyGreeter : Greeter {}
+
+let greeter = MyGreeter()
+print(greeter.greet("Diego"))
